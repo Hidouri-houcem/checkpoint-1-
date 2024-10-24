@@ -1,0 +1,49 @@
+ALGORITHM algorithm_name
+VAR
+    phrase : STRING;
+    longueur: INTEGER;
+    nombre_de_mots:INTEGER;
+    nombre_de_voyelles:INTEGER;
+    i:INTEGER;
+    caractere:CHAR;
+BEGIN
+    longueur := 0;
+    nombre_de_mots := 1 ;
+    nombre_de_voyelles := 0;
+
+
+
+    REPEAT
+        read("saisir une phrase se terminant par un point :",phrase)
+    UNTIL (phrase[LENGTH(phrase) - 1] = '.')
+END
+    Écriture(phrase)
+
+
+    FOR i FROM 1 TO (LENGTH(phrase) - 1) STEP 1  DO
+        caractere := phrase[i];
+
+
+        longueur := longueur + 1 ;
+
+
+        IF (caractere=' ') THEN
+            nombre_de_mots = nombre_de_mots + 1 ;
+
+        END_IF
+
+
+        IF (caractere in ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']) THEN
+            nombre_de_voyelles = nombre_de_voyelles +1 ;
+        END_IF
+
+    END_FOR
+
+
+    nombre_de_mots = nombre_de_mots + 1 ;
+
+    Écriture("Longueur de la phrase : ",longueur);
+    Écriture("Nombre de mots : ", nombre_de_mots);
+    Écriture(Ecrire "Nombre de voyelles : ", nombre_de_voyelles);
+
+    END
